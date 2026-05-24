@@ -1,0 +1,6 @@
+{
+  "name": "อ๋อคาเฟ่",
+  "description": "Smart sales drink report generator for tracking daily client visits, drink sales, and inventory levels with Gemini AI insights.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
