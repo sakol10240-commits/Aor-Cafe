@@ -161,7 +161,7 @@ fun DrinkDashboard(
                 ) {
                     KPIWidget(
                         label = "รายได้ / Revenue",
-                        value = "฿${String.format("%.2f", totalRevenue)}",
+                        value = "฿${String.format(java.util.Locale.US, "%.2f", totalRevenue)}",
                         icon = Icons.Default.MonetizationOn,
                         accentColor = MaterialTheme.colorScheme.primary
                     )
@@ -499,14 +499,14 @@ fun ClientVisitCard(
                     if (discountPercent > 0) {
                         val originalVal = visit.drinkPrice * visit.qty
                         Text(
-                            text = "฿${String.format("%.2f", originalVal)}",
+                            text = "฿${String.format(java.util.Locale.US, "%.2f", originalVal)}",
                             style = MaterialTheme.typography.bodyMedium.copy(textDecoration = TextDecoration.LineThrough),
                             color = MaterialTheme.colorScheme.outline,
                             modifier = Modifier.padding(end = 2.dp)
                         )
                     }
                     Text(
-                        text = "฿${String.format("%.2f", visit.totalPrice)}",
+                        text = "฿${String.format(java.util.Locale.US, "%.2f", visit.totalPrice)}",
                         style = MaterialTheme.typography.titleMedium,
                         fontWeight = FontWeight.ExtraBold,
                         color = MaterialTheme.colorScheme.primary
@@ -657,7 +657,7 @@ fun DrinkInventoryCard(
 
             // Price tag
             Text(
-                text = "฿${String.format("%.2f", drink.price)}",
+                text = "฿${String.format(java.util.Locale.US, "%.2f", drink.price)}",
                 style = MaterialTheme.typography.titleSmall,
                 color = MaterialTheme.colorScheme.primary,
                 fontWeight = FontWeight.Black
@@ -1154,7 +1154,7 @@ fun MockupDrinkReport(
                 
                 Text(
                     text = "### 1. $intervalName Business Summary\n" +
-                           "Over the selected timeframe ($intervalName), the café accomplished **$count client visits**, selling a total of **${filteredVisits.sumOf { it.qty }} drinks**, generating **฿${String.format("%.2f", revenue)}** in gross sales.\n\n" +
+                           "Over the selected timeframe ($intervalName), the café accomplished **$count client visits**, selling a total of **${filteredVisits.sumOf { it.qty }} drinks**, generating **฿${String.format(java.util.Locale.US, "%.2f", revenue)}** in gross sales.\n\n" +
                            "• **Best-selling item:** $bestSeller ($bestSellerQty units sold)\n" +
                            "• **Busiest logged segment:** Active walk-ins remain healthy.",
                     style = MaterialTheme.typography.bodyLarge
@@ -1781,7 +1781,7 @@ fun LogVisitModal(
                             horizontalArrangement = Arrangement.SpaceBetween
                         ) {
                             Text("ราคารวม / Subtotal:", style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
-                            Text("฿${String.format("%.2f", originalTotal)}", style = MaterialTheme.typography.bodyMedium)
+                            Text("฿${String.format(java.util.Locale.US, "%.2f", originalTotal)}", style = MaterialTheme.typography.bodyMedium)
                         }
                         if (selectedDiscount > 0) {
                             Spacer(modifier = Modifier.height(4.dp))
@@ -1790,7 +1790,7 @@ fun LogVisitModal(
                                 horizontalArrangement = Arrangement.SpaceBetween
                             ) {
                                 Text("ส่วนลด / Discount ($selectedDiscount%):", style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.error)
-                                Text("-฿${String.format("%.2f", savings)}", style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.error, fontWeight = FontWeight.Bold)
+                                Text("-฿${String.format(java.util.Locale.US, "%.2f", savings)}", style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.error, fontWeight = FontWeight.Bold)
                             }
                         }
                         Spacer(modifier = Modifier.height(6.dp))
@@ -1802,7 +1802,7 @@ fun LogVisitModal(
                             verticalAlignment = Alignment.CenterVertically
                         ) {
                             Text("รวมสุทธิ / Total:", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
-                            Text("฿${String.format("%.2f", finalTotal)}", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.ExtraBold, color = MaterialTheme.colorScheme.primary)
+                            Text("฿${String.format(java.util.Locale.US, "%.2f", finalTotal)}", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.ExtraBold, color = MaterialTheme.colorScheme.primary)
                         }
                     }
                 }
